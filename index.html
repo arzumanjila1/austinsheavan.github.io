@@ -8,14 +8,14 @@
   <!-- Social Media Preview -->
   <meta property="og:title" content="Heavan & Austin's Wedding Invitation">
   <meta property="og:description" content="Welcome to Our Wedding Invitation!">
-  <meta property="og:image" content="Heavan & Austin's Wedding Invitation (1).png">
+  <meta property="og:image" content="heavan_austin_invite1.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arzumanjila1.github.io/austinsheavan/">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Heavan & Austin's Wedding Invitation">
   <meta name="twitter:description" content="Welcome to Our Wedding Invitation!">
-  <meta name="twitter:image" content="Heavan & Austin's Wedding Invitation (1).png">
+  <meta name="twitter:image" content="heavan_austin_invite1.png">
 
   <!-- Google Fonts for New Ion Script -->
   <link href="https://fonts.googleapis.com/css2?family=New+Ion+Script&display=swap" rel="stylesheet">
@@ -37,6 +37,11 @@
       position: relative;
     }
 
+    .page-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
     .page-image {
       width: 100%;
       border-radius: 12px;
@@ -45,9 +50,12 @@
       margin-bottom: 2rem;
     }
 
-    /* RSVP button with absolute positioning relative to the image */
+    /* RSVP button overlay */
     .rsvp-button {
       position: absolute;
+      top: 65%; /* vertical position relative to image */
+      left: 50%;
+      transform: translate(-50%, -50%);
       background-color: #ffd8a6;
       color: #111;
       padding: 1rem 2rem;
@@ -76,16 +84,25 @@
       color: #4b6cb7;
       text-decoration: underline;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      .rsvp-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        top: 70%; /* scales down on mobile */
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Wrapper to position RSVP button relative to the image -->
-    <div style="position: relative; width: 100%;">
-      <img src="Heavan & Austin's Wedding Invitation (1).png" alt="Page 1 Invite" class="page-image">
-      <!-- RSVP button positioned exactly on the image -->
-      <a href="https://www.zola.com/wedding/heavanandaustin" target="_blank" class="rsvp-button"
-         style="top: 600px; left: 50%; transform: translateX(-50%); position: absolute;">RSVP</a>
+    <div class="page-wrapper">
+      <!-- Wedding Invitation Image -->
+      <img src="heavan_austin_invite1.png" alt="Heavan & Austin's Wedding Invitation" class="page-image">
+
+      <!-- RSVP Button overlay -->
+      <a href="https://www.zola.com/wedding/heavanandaustin" target="_blank" class="rsvp-button">RSVP</a>
     </div>
 
     <footer>
